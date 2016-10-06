@@ -1,0 +1,15 @@
+.link line {
+  stroke: #099;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+
+/* remove "no file selected" text from upload button */
+input[type='file'] {
+  color: transparent;
+}
