@@ -18,6 +18,7 @@
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
       <div class="cover-container">
+
         <div class="masthead clearfix">
           <div class="inner">
             <h3 class="masthead-brand">Searching Algorithms</h3>
@@ -30,19 +31,22 @@
           </div><!-- end of inner-->
         </div><!-- end of masthead -->
 
-        <div class="inner cover">
-          <p class="inner">Select local CSV File:</p>
-          <input id="csv" type="file">
-          <svg width="480" height="300"></svg>
-        </div><!-- end of inner cover-->
+        <div class="playground">
+          <div class="inner cover">
+            <p class="inner">Select local CSV File</p>
+            <label class="btn btn-default btn-file">
+              Browse <input type="file" id="csv" />
+            </label>
+          </div><!-- end of inner cover-->
+        </div><!-- /.playground -->
+
+        <div class="mastfoot">
+          <div class="inner">
+            <a href="https://github.com/ciglipaf/searching-algorithms">ciglipaf</a>
+          </div><!-- end of inner -->
+        </div><!-- end of mastfoot -->
 
       </div><!-- end of cover -->
-
-      <div class="mastfoot">
-        <div class="inner">
-          ciglipaf
-        </div><!-- end of inner -->
-      </div><!-- end of mastfoot -->
     </div><!-- end of site-wrapper-inner -->
   </div><!-- end of site-wrapper -->
 
@@ -51,7 +55,6 @@
   <script>window.jQuery || document.write('<script src="assets/vendor/bootstrap/js/jquery.min.js"><\/script>')</script>
   <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/vendor/d3/d3.min.js"></script>
-  <script src="assets/js/graph.js"></script>
   <script src="assets/js/input.js"></script>
 </body>
 </html>
