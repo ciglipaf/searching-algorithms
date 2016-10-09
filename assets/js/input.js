@@ -121,9 +121,7 @@ function initializeGraph() {
                             .data(graph.links)
                             .enter()
                             .append("line")
-                            .attr("class", "link")
-                            .attr("from", function (d) { return d.source })
-                            .attr("to", function(d) { return d.target })
+                            .attr("class", function (d) { var name = "link " +d.source + "to"+d. target; return name })
                             .attr("stroke", function (d, i) { return color(i); });
 
   var node          = svg.selectAll("circle")

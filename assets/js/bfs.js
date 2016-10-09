@@ -63,6 +63,7 @@ while (!queue.isEmpty()) {
   var element = document.getElementById(deque);
   element.className = "";
   element.classList.add("visited");
+  
 
   if (deque == target)
     break;
