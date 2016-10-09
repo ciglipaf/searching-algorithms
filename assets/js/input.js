@@ -1,4 +1,5 @@
 var fileInput     =   document.getElementById("csv");
+var example       =   document.getElementById("example");
 var links;
 var nodes;
 var graph = {};
@@ -10,6 +11,7 @@ readFile = function () {
   var reader = new FileReader();
 
   reader.onload = function () {
+
     document.getElementsByClassName("inner cover")[0].style.display = "none";
     document.getElementsByClassName("dropdown")[0].style.display    = "initial";
     document.getElementsByClassName("dropdown")[1].style.display    = "initial";
@@ -29,7 +31,25 @@ readFile = function () {
   reader.readAsBinaryString(fileInput.files[0]);
 };
 
+uploadedFile = function () {
+
+        document.getElementsByClassName("inner cover")[0].style.display = "none";
+        document.getElementsByClassName("dropdown")[0].style.display    = "initial";
+        document.getElementsByClassName("dropdown")[1].style.display    = "initial";
+
+        links          = exampleJSON;
+        nodes          = getNodes(links);
+
+        graph["links"] = links;
+        graph["nodes"] = nodes;
+
+        initializeGraph();
+        initializeDrowdowns(nodes);
+
+};
+
 fileInput.addEventListener('change', readFile);
+example.addEventListener('click', uploadedFile);
 
 
 
@@ -40,7 +60,7 @@ function csvJSON(csv){
   var headers = ["source", "target", "cost"];
   var json    = [];
 
-  for(var i = 1; i < lines.length ; i++) {
+  for(var i = 0; i < lines.length ; i++) {
     var obj = {};
     var currentline=lines[i].split(",");
   
@@ -50,7 +70,7 @@ function csvJSON(csv){
 
     json.push(obj);
   }
-
+console.log(json);
   return json; 
 }
 
@@ -89,7 +109,7 @@ function initializeGraph() {
   var simulation    = d3.forceSimulation()
                         .force("link", d3.forceLink().id(function(d) { return d.id; }))
                         .force("charge", d3.forceManyBody().theta(50))
-                        .force("collusion", d3.forceCollide(70))
+                        .force("collusion", d3.forceCollide(60))
                         .force("center", d3.forceCenter(width / 2, height / 2));
 
   var svg  = d3.select(".graph")
