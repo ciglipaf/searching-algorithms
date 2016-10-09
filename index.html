@@ -34,15 +34,42 @@
         <div class="playground">
           <div class="inner cover">
             <p class="inner">Select local CSV File</p>
-            <label class="btn btn-default btn-file">
+            <label class="btn btn-success btn-file">
               Browse <input type="file" id="csv" />
             </label>
           </div><!-- end of inner cover-->
+
+          <div class="selectPath">
+            <div class="dropdown clearfix">
+              <button class="btn btn-warning dropdown-toggle" type="button" 
+              id="source" data-toggle="dropdown" aria-hashpoup="true"
+              expanded="true">
+                Select Source
+                <span class="caret"></span>
+              </button>
+              <ul id="sourceList" class="dropdown-menu" aria-labelledby="source">
+              </ul><!-- /.dropdown-menu -->
+            </div><!-- /.dropdown -->
+
+            <div class="dropdown clearfix">
+              <button class="btn btn-info dropdown-toggle" type="button" 
+              id="target" data-toggle="dropdown" aria-hashpoup="true"
+              expanded="true">
+                Select Target
+                <span class="caret"></span>
+              </button>
+              <ul id="targetList" class="dropdown-menu" aria-labelledby="target">
+              </ul><!-- /.dropdown-menu -->
+            </div><!-- /.dropdown -->
+          </div><!-- /.selectPath -->
+
+          <div class="graph"></div>
+          </div><!-- ./graph -->
         </div><!-- /.playground -->
 
         <div class="mastfoot">
           <div class="inner">
-            <a href="https://github.com/ciglipaf/searching-algorithms">ciglipaf</a>
+            <a href="https://github.com/ciglipaf/searching-algorithms"></a>
           </div><!-- end of inner -->
         </div><!-- end of mastfoot -->
 
@@ -56,5 +83,6 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/vendor/d3/d3.min.js"></script>
   <script src="assets/js/input.js"></script>
+  <script src="assets/js/bfs.js"></script>
 </body>
 </html>

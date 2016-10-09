@@ -1,11 +1,49 @@
-.link line {
-  stroke: #099;
+.link {
   stroke-opacity: 0.6;
+  stroke-width: 4;
 }
 
-.nodes circle {
+.node {
   stroke: #fff;
   stroke-width: 1.5px;
+}
+
+.visited {
+  r: 15px;
+  fill: #000;
+  stroke: #bc1339;
+  stroke-width: 3.5px;
+}
+
+.selected {
+  fill: #3c3;
+  stroke: #69c;
+  stroke-width: 3.5px;
+  r: 22px;
+}
+
+.name {
+  text-anchor: middle;
+  fill: #d3c99b;
+  pointer-events: none;
+  font: 12px sans-serif;
+}
+
+.dropdown {
+  display: none;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.playground {
+  display: flex;
+  justify-content: center;
+}
+
+.selectPath {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
