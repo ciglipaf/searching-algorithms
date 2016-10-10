@@ -3,6 +3,7 @@ var example       =   document.getElementById("example");
 var links;
 var nodes;
 var graph = {};
+var adjList;
 
 
 // Read CSV file that contains links

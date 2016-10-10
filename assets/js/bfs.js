@@ -115,7 +115,7 @@ function backtrace(graph, source, target) {
 }
 
 function getPath(from, to) {
-  var adjList = createAdjList(nodes, links);
+  adjList = createAdjList(nodes, links);
   var bfsInfo = doBFS(adjList, from, to);
   // for (var i = 0; i < adjList.length; i++) {
   //     console.log("vertex " + i + ": distance = " + bfsInfo[i].distance + ", predecessor = " + bfsInfo[i].predecessor);
