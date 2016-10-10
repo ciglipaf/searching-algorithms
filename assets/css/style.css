@@ -9,25 +9,36 @@
 }
 
 .visited {
-  r: 15px;
+  r: 25px;
   fill: #000;
   stroke: #bc1339;
   stroke-width: 3.5px;
   -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .selected {
+  r: 30px;
   fill: #3c3;
   stroke: #69c;
   stroke-width: 3.5px;
-  r: 22px;
   -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.seen {
+  r: 20px;
+  fill: #ff8a66;
+  stroke: #03c;
+  stroke-width: 3.5px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .name {
@@ -38,10 +49,22 @@
 }
 
 .dropdown {
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.hiddenToVisible {
   display: none;
-  margin-top: 10px;
+}
+
+.panel {
   margin-left: 5px;
 }
+
+.panel-body {
+  color: black;
+}
+
 
 .playground {
   display: flex;
@@ -54,6 +77,64 @@
   justify-content: center;
 }
 
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 0px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+.buttons {
+  margin-bottom: 15px;
+}
+
+.yellow {
+  color: #ff0;
+}
+
+.blue {
+  color: #00f;
+}
+
+.seen-info {
+  background-color: #ff8a66;
+  border-color: #03c;
+  border-width: 3px;
+  font-size: 10px !important;
+}
+
+.visited-info {
+  background-color: #000;
+  border-color: #bc1339;
+  border-width: 3px;
+  font-size: 10px !important;
+}
+
+.selected-info {
+  background-color: #3c3;
+  border-color: #69c;
+  border-width: 3px;
+  font-size: 10px !important;
+}
 
 /* remove "no file selected" text from upload button */
 input[type='file'] {

@@ -43,7 +43,12 @@
           </div><!-- end of inner cover-->
 
           <div class="selectPath">
-            <div class="dropdown clearfix">
+            <div class="buttons">
+              <button type="button" class="btn btn-lg btn-circle hiddenToVisible seen-info">Seen</button>
+              <button type="button" class="btn btn-lg btn-circle hiddenToVisible visited-info">Visited</button>
+              <button type="button" class="btn btn-lg btn-circle hiddenToVisible selected-info">Selected</button>
+            </div>
+            <div class="dropdown hiddenToVisible clearfix">
               <button class="btn btn-warning dropdown-toggle" type="button" 
               id="source" data-toggle="dropdown" aria-hashpoup="true"
               expanded="true">
@@ -54,7 +59,7 @@
               </ul><!-- /.dropdown-menu -->
             </div><!-- /.dropdown -->
 
-            <div class="dropdown clearfix">
+            <div class="dropdown hiddenToVisible clearfix">
               <button class="btn btn-info dropdown-toggle" type="button" 
               id="target" data-toggle="dropdown" aria-hashpoup="true"
               expanded="true">
@@ -64,6 +69,13 @@
               <ul id="targetList" class="dropdown-menu" aria-labelledby="target">
               </ul><!-- /.dropdown-menu -->
             </div><!-- /.dropdown -->
+
+            <div class="panel panel-info hiddenToVisible">
+              <div class="panel-heading">Logging</div><!-- /.panel-heading -->
+                <div class="panel-body" id="steps">
+                Log...
+                </div><!-- /.panel-body -->
+            </div><!-- /.panel panel-success -->
           </div><!-- /.selectPath -->
 
           <div class="graph"></div>

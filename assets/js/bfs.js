@@ -60,10 +60,13 @@ var doBFS = function(graph, source, target) {
 
 while (!queue.isEmpty()) {
   var deque= queue.dequeue();
-  var element = document.getElementById(deque);
-  element.className = "";
-  element.classList.add("visited");
-  
+
+  // UI staff
+  var element       = $("#" + deque);
+  element.removeClass();
+  element.addClass("visited");
+  var steps         = $("#steps");
+  steps.append("<span class='yellow'>"+ "Deque" +"</span>"+ "<span> = "+ $("#" + deque).attr("name") + "</span><br>");
 
   if (deque == target)
     break;
@@ -74,6 +77,12 @@ while (!queue.isEmpty()) {
         bfsInfo[neighbor].distance = bfsInfo[deque].distance + 1;
         bfsInfo[neighbor].predecessor = deque;
         queue.enqueue(neighbor);
+
+        // UI staff
+        element       = $("#" + neighbor);
+        element.removeClass();
+        element.addClass("seen");
+  steps.append("<span class='blue'>"+ "Enqueue" +"</span>"+ "<span> = "+ $("#" + neighbor).attr("name") + "</span><br>");
      }
    }
 }
@@ -82,18 +91,26 @@ while (!queue.isEmpty()) {
 };
 
 function backtrace(graph, source, target) {
-  var element = document.getElementById(source);
 
-  element.className = "";
-  element.classList.add("selected");
+  // UI staff
+  var steps         = $("#steps");
+  steps.append("--------------------------" + "<br>");
+  steps.append("Finding Path..." + "<br>");
+  var element = $("#" + target);
+  element.removeClass();
+  element.addClass("selected");
+  steps.append(element.attr("name") + "<br>");
+
   console.log("target: " + target);
   while(target != source) {
-    element = document.getElementById(target);
     target = graph[target].predecessor;
     console.log("path: " + target);  
 
-    element.className = "";
-    element.classList.add("selected");
+    // UI staff
+    element = $("#" + target);
+    element.removeClass();
+    element.addClass("selected");
+    steps.append(element.attr("name") + "<br>");
   }
 }
 

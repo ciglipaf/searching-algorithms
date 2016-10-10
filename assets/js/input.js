@@ -13,8 +13,7 @@ readFile = function () {
   reader.onload = function () {
 
     document.getElementsByClassName("inner cover")[0].style.display = "none";
-    document.getElementsByClassName("dropdown")[0].style.display    = "initial";
-    document.getElementsByClassName("dropdown")[1].style.display    = "initial";
+    $(".hiddenToVisible").removeClass("hiddenToVisible");
 
     
     links          = csvJSON(reader.result);
@@ -33,18 +32,17 @@ readFile = function () {
 
 uploadedFile = function () {
 
-        document.getElementsByClassName("inner cover")[0].style.display = "none";
-        document.getElementsByClassName("dropdown")[0].style.display    = "initial";
-        document.getElementsByClassName("dropdown")[1].style.display    = "initial";
+  document.getElementsByClassName("inner cover")[0].style.display = "none";
+  $(".hiddenToVisible").removeClass("hiddenToVisible");
 
-        links          = exampleJSON;
-        nodes          = getNodes(links);
+  links          = exampleJSON;
+  nodes          = getNodes(links);
 
-        graph["links"] = links;
-        graph["nodes"] = nodes;
+  graph["links"] = links;
+  graph["nodes"] = nodes;
 
-        initializeGraph();
-        initializeDrowdowns(nodes);
+  initializeGraph();
+  initializeDrowdowns(nodes);
 
 };
 
@@ -131,6 +129,7 @@ function initializeGraph() {
                             .attr("class", "node")
                             .attr("r", 15)
                             .attr("id", function (d) { return d.group; })
+                            .attr("name", function(d) { return d.id; })
                             .attr("fill", function (d,i) { return color(d.group); });
 
   var label         = svg.selectAll("text")
@@ -162,7 +161,7 @@ function initializeGraph() {
 
     label
         .attr("x", function(d)  { return d.x; })
-        .attr("y", function (d) { return d.y - 25; });
+        .attr("y", function (d) { return d.y - 33; });
 
   }
 
@@ -211,6 +210,14 @@ function begin(source, target) {
     from = $("#source").val();
     to   = $("#target").val();
     console.log("from" + from + " to "+ to);
+
+    // clear box
+    var steps         = $("#steps");
+    steps.html("");
+
+    var circles       = $("circle");
+    circles.removeClass();
+
     getPath(from, to);
   }
 }
