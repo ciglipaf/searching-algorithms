@@ -250,7 +250,7 @@ function begin(source, target) {
     circles.removeClass();
 
     adjList = createAdjList(nodes, links);
-    bfs(from, to);
-    //dfs(adjList, from, to);
+    //bfs(from, to);
+    dfs(adjList, from, to);
   }
 }
