@@ -206,6 +206,36 @@ function initializeDrowdowns(nodes) {
 
 }
 
+function create2DArray(rows) {
+  var arr = [];
+
+  for (var i=0;i<rows;i++) {
+     arr[i] = [];
+  }
+
+  return arr;
+}
+
+function createAdjList(nodes, links) {
+  console.log(nodes);
+  var adjList = create2DArray(nodes.length);
+
+  for (var i = 0; i < links.length; i++) {
+    adjList[links[i].source.group].push(links[i].target.group);
+    adjList[links[i].target.group].push(links[i].source.group);
+  }
+
+  // remove duplicate adjantency
+  for (var i = 0; i < nodes.length; i++) {
+    adjList[i] = adjList[i].filter((v, i, a) => a.indexOf(v) === i); 
+  }
+
+  console.log(adjList);
+
+  return adjList;
+}
+
+
 function begin(source, target) {
   if(source && target) {
     from = $("#source").val();
@@ -219,6 +249,8 @@ function begin(source, target) {
     var circles       = $("circle");
     circles.removeClass();
 
-    getPath(from, to);
+    adjList = createAdjList(nodes, links);
+    bfs(from, to);
+    //dfs(adjList, from, to);
   }
 }
