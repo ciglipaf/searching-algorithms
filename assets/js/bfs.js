@@ -19,10 +19,9 @@ var doBFS = function(graph, source, target) {
   var bfsInfo = [];
   for (var i = 0; i < graph.length; i++) {
      bfsInfo[i] = {
-      // distance not necessary for unweighted graphs, it can be computed while backtracing
        distance: null,
-       predecessor: null }
-     ;
+       predecessor: null 
+     }
   }
 
   bfsInfo[source].distance = 0;

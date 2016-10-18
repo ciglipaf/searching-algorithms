@@ -48,6 +48,22 @@
               <button type="button" class="btn btn-lg btn-circle hiddenToVisible visited-info">Visited</button>
               <button type="button" class="btn btn-lg btn-circle hiddenToVisible selected-info">Selected</button>
             </div>
+
+            <div class="dropdown hiddenToVisible">
+              <button class="btn btn-info dropdown-toggle" type="button"
+                id="algorithm" data-toggle="dropdown" aria-hashpopup="true"
+                expanded="true">Select Algorithm
+                <span class="caret"></span>
+              </button>
+
+              <ul id="algorithmList" class="dropdown-menu" aria-labelledby="algorithms">
+                <li><a data-value="BFS">BFS</a></li>
+                <li><a data-value="DFS">DFS</a></li>
+                <li><a data-value="limited">Limited-DFS</a></li>
+                <li><a data-value="iterative">Iterative-DFS</a></li>
+              </ul>
+              <input type="text" class="form-control depth" placeholder="depth" />
+            </div><!-- /.algorithms hiddenToVisible -->
             <div class="dropdown hiddenToVisible clearfix">
               <button class="btn btn-warning dropdown-toggle" type="button" 
               id="source" data-toggle="dropdown" aria-hashpoup="true"
@@ -55,6 +71,7 @@
                 Select Source
                 <span class="caret"></span>
               </button>
+
               <ul id="sourceList" class="dropdown-menu" aria-labelledby="source">
               </ul><!-- /.dropdown-menu -->
             </div><!-- /.dropdown -->
@@ -101,5 +118,6 @@
   <script src="assets/js/input.js"></script>
   <script src="assets/js/bfs.js"></script>
   <script src="assets/js/dfs.js"></script>
-</body>
+  <script src="assets/js/script.js"></script>
+</body> 
 </html>

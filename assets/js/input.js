@@ -4,6 +4,7 @@ var links;
 var nodes;
 var graph = {};
 var adjList;
+var algorithm;
 
 
 // Read CSV file that contains links
@@ -49,7 +50,6 @@ uploadedFile = function () {
 
 fileInput.addEventListener('change', readFile);
 example.addEventListener('click', uploadedFile);
-
 
 
 // Convert csv into json format
@@ -186,22 +186,39 @@ function initializeDrowdowns(nodes) {
     document.getElementById("targetList").appendChild(li_clone);
   }
 
+  $("#algorithmList li a").click(function(){
+    $(".graph svg .node").removeClass("visited");
+    $(".graph svg .node").removeClass("seen");
+    $(".graph svg .node").removeClass("selected");
+    $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+    $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+    algorithm = true;
+    begin(source, target, algorithm);
+  });
+
   $("#sourceList li a").click(function(){
     $(".graph svg .node").removeClass("visited");
+    $(".graph svg .node").removeClass("seen");
     $(".graph svg .node").removeClass("selected");
     $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
     source = true;
-    begin(source, target);
+    begin(source, target, algorithm);
   });
 
   $("#targetList li a").click(function(){
     $(".graph svg .node").removeClass("visited");
+    $(".graph svg .node").removeClass("seen");
     $(".graph svg .node").removeClass("selected");
     $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
     target = true;
-    begin(source, target);
+    begin(source, target, algorithm);
+  });
+
+
+ $('#algorithmList').change(function() {
+    alert("cemal");
   });
 
 }
@@ -236,11 +253,13 @@ function createAdjList(nodes, links) {
 }
 
 
-function begin(source, target) {
-  if(source && target) {
-    from = $("#source").val();
-    to   = $("#target").val();
-    console.log("from" + from + " to "+ to);
+function begin(source, target, algorithm) {
+
+  if(source && target && algorithm) {
+    from      = $("#source").val();
+    to        = $("#target").val();
+    algorithm = $("#algorithm").val();
+    console.log("from" + from + " to "+ to + " algorithm" + algorithm);
 
     // clear box
     var steps         = $("#steps");
@@ -250,7 +269,11 @@ function begin(source, target) {
     circles.removeClass();
 
     adjList = createAdjList(nodes, links);
-    //bfs(from, to);
-    dfs(adjList, from, to);
+    if (algorithm == "BFS")
+      bfs(from, to);
+    if (algorithm == "DFS")
+      dfs(adjList, from, to);
+    if (algorithm == "Iterative-DFS")
+      dfs(adjList, from, to, $("#depth").val);
   }
 }
