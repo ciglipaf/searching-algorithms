@@ -20,7 +20,7 @@ var doBFS = function(graph, source, target) {
   for (var i = 0; i < graph.length; i++) {
      bfsInfo[i] = {
        distance: null,
-       predecessor: null 
+       predecessor: null
      }
   }
 
@@ -74,7 +74,7 @@ function backtrace(graph, source, target) {
   console.log("target: " + target);
   while(target != source) {
     target = graph[target].predecessor;
-    console.log("path: " + target);  
+    console.log("path: " + target);
 
     // UI staff
     element = $("#" + target);
@@ -85,6 +85,8 @@ function backtrace(graph, source, target) {
 }
 
 function bfs(from, to) {
+  console.log("cemal");
+  console.log(adjList);
   var bfsInfo = doBFS(adjList, from, to);
   // for (var i = 0; i < adjList.length; i++) {
   //     console.log("vertex " + i + ": distance = " + bfsInfo[i].distance + ", predecessor = " + bfsInfo[i].predecessor);

@@ -8,7 +8,7 @@ var algorithm;
 
 
 // Read CSV file that contains links
-// and create object of nodes/links 
+// and create object of nodes/links
 readFile = function () {
   var reader = new FileReader();
 
@@ -17,7 +17,7 @@ readFile = function () {
     document.getElementsByClassName("inner cover")[0].style.display = "none";
     $(".hiddenToVisible").removeClass("hiddenToVisible");
 
-    
+
     links          = csvJSON(reader.result);
     nodes          = getNodes(links);
 
@@ -55,14 +55,14 @@ example.addEventListener('click', uploadedFile);
 // Convert csv into json format
 function csvJSON(csv){
 
-  var lines   = csv.split("\n");
+  var lines   = csv.split("\\r?\\n");
   var headers = ["source", "target", "cost"];
   var json    = [];
 
   for(var i = 0; i < lines.length ; i++) {
     var obj = {};
     var currentline=lines[i].split(",");
-  
+
     for(var j=0;j<headers.length;j++){
         obj[headers[j]] = currentline[j];
     }
@@ -70,7 +70,7 @@ function csvJSON(csv){
     json.push(obj);
   }
 console.log(json);
-  return json; 
+  return json;
 }
 
 function getNodes(list) {
@@ -90,7 +90,7 @@ function getNodes(list) {
       result.push(obj);
     }
 
-   
+
   }
 
   return result;
@@ -244,7 +244,7 @@ function createAdjList(nodes, links) {
 
   // remove duplicate adjantency
   for (var i = 0; i < nodes.length; i++) {
-    adjList[i] = adjList[i].filter((v, i, a) => a.indexOf(v) === i); 
+    adjList[i] = adjList[i].filter((v, i, a) => a.indexOf(v) === i);
   }
 
   console.log(adjList);
@@ -273,7 +273,9 @@ function begin(source, target, algorithm) {
       bfs(from, to);
     if (algorithm == "DFS")
       dfs(adjList, from, to);
+    /*if (algorithm == "Iterative-DFS")
+      a(adjList, from, to, $("#depth").val);*/
     if (algorithm == "Iterative-DFS")
-      dfs(adjList, from, to, $("#depth").val);
+      astar();
   }
 }

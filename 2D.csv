@@ -1,0 +1,102 @@
+[
+  {
+    "City": "Arad",
+    "X": 438,
+    "Y": 385
+  },
+  {
+    "City": "Bucharest",
+    "X": 785,
+    "Y": 550
+  },
+  {
+    "City": "Dobreta",
+    "X": 521,
+    "Y": 613
+  },
+  {
+    "City": "Eforie",
+    "X": 1007,
+    "Y": 610
+  },
+  {
+    "City": "Fagaras",
+    "X": 655,
+    "Y": 410
+  },
+  {
+    "City": "Giurgiu",
+    "X": 770,
+    "Y": 635
+  },
+  {
+    "City": "Hirsova",
+    "X": 950,
+    "Y": 550
+  },
+  {
+    "City": "Iasi",
+    "X": 885,
+    "Y": 350
+  },
+  {
+    "City": "Lugoj",
+    "X": 522,
+    "Y": 515
+  },
+  {
+    "City": "Mehadia",
+    "X": 524,
+    "Y": 563
+  },
+  {
+    "City": "Neamt",
+    "X": 820,
+    "Y": 325
+  },
+  {
+    "City": "Oradea",
+    "X": 490,
+    "Y": 290
+  },
+  {
+    "City": "Pitesti",
+    "X": 700,
+    "Y": 510
+  },
+  {
+    "City": "RimnicuVilcea",
+    "X": 610,
+    "Y": 480
+  },
+  {
+    "City": "Sibiu",
+    "X": 570,
+    "Y": 415
+  },
+  {
+    "City": "Timisoara",
+    "X": 434,
+    "Y": 477
+  },
+  {
+    "City": "Urziceni",
+    "X": 865,
+    "Y": 548
+  },
+  {
+    "City": "Vaslui",
+    "X": 935,
+    "Y": 425
+  },
+  {
+    "City": "Zerind",
+    "X": 450,
+    "Y": 328
+  },
+  {
+    "City": "Craiova",
+    "X": 615,
+    "Y": 610
+  }
+]
